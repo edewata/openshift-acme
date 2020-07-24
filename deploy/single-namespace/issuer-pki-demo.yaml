@@ -1,0 +1,11 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: pki-demo
+  annotations:
+    "acme.openshift.io/priority": "50"
+  labels:
+    managed-by: "openshift-acme"
+    type: "CertIssuer"
+data:
+  "cert-issuer.types.acme.openshift.io": '{"type":"ACME","acmeCertIssuer":{"directoryUrl":"https://pki.demo.dogtagpki.org/acme/directory"}}'
